@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+    <input type="button" id="btnAjax" value="Ajax" />
+    <div id="divResult"></div>
+    <script>
+        $(document).ready(function () {
+
+            $("#bntAjax").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Person/GetResult?searchBy=",
+                    data: "a=2&b=5",
+                    success: function (msg) {
+                        $("#divResult").text(msg);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
